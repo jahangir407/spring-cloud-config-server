@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jahangir407/default.config.repo
+          timeout: 4
+          repos:
+            job-service:
+              pattern: job*/prod,job*/stg,job*/dev
+              uri: https://github.com/jahangir407/job-service.config.repo
+            profile-service:
+              pattern: profile-service*/prod*,profile-service*/qa*
+              uri: https://github.com/jahangir407/profile-service.config.repo
